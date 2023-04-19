@@ -1,0 +1,48 @@
+
+
+CREATE TABLE students (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  major TEXT NOT NULL
+);
+
+
+
+CREATE TABLE courses (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  credits INTEGER NOT NULL,
+  prereqs TEXT
+);
+
+
+
+CREATE TABLE student_courses (
+  id INTEGER PRIMARY KEY,
+  student_id INTEGER NOT NULL,
+  course_id INTEGER NOT NULL,
+  term TEXT NOT NULL,
+  grade TEXT NOT NULL,
+  required TEXT NOT NULL,
+  taken TEXT NOT NULL,
+  FOREIGN KEY (student_id) REFERENCES students (id),
+  FOREIGN KEY (course_id) REFERENCES courses (id)
+);
+
+
+CREATE TABLE requirements (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL
+);
+
+
+
+CREATE TABLE requirement_courses (
+  id INTEGER PRIMARY KEY,
+  requirement_id INTEGER NOT NULL,
+  course_id INTEGER NOT NULL,
+  FOREIGN KEY (requirement_id) REFERENCES requirements (id),
+  FOREIGN KEY (course_id) REFERENCES courses (id)
+);
+
+

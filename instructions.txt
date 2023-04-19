@@ -1,0 +1,24 @@
+
+#instructions
+run on cmd as admin
+
+pip install mysql-connector
+pip install networkx
+pip install matplotlib
+
+
+use mysql server database to open the database, create a database table called "school" 
+using the scripts  i have shared "courses.txt" copy and paste in new query and execute
+
+
+open jupyter notebook to open the project
+
+
+
+-- run on jupyter notebook to get python path
+import sys
+print(sys.executable)
+
+combine your path with this -m pip install mysql-connector-python
+
+
